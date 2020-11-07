@@ -44,7 +44,7 @@ def auth_user(users_db, usr_name, usr_pass):
 
 # Cложность  O(n) - линейная
 
-def auth_user(users_db, usr_name, usr_pass):
+def auth_user2(users_db, usr_name, usr_pass):
     for key, value in users_db.items():
         if key == usr_name:
             if value['pass'] == usr_pass and value['activation']:
@@ -61,3 +61,5 @@ users_db = {'michael': {'pass': '1', 'activation': True},
             'bob': {'pass': '2', 'activation': True},
             'tom': {'pass': '3', 'activation': False},
             }
+auth_user(users_db, 'tom', '3')
+auth_user2(users_db, 'tom', '3')
